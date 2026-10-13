@@ -10,7 +10,7 @@ vetor.extend([array]):
 
 vetor.pop():
 
-vetor.removel(valor):
+vetor.remove(valor):
 
 vetor.sort()
 

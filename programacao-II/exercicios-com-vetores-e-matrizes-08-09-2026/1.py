@@ -96,8 +96,7 @@ def func_4():
     print(numbers)
 
 
-if __name__ == "__main__":
-    func_1()
-    func_2()
-    func_3()
-    func_4()
+func_1()
+func_2()
+func_3()
+func_4()

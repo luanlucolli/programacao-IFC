@@ -29,13 +29,15 @@ def soma_linha(matriz):
         somaElementos.append(somaTemp)
     return somaElementos
 
-'''maior_menor_matriz: recebe por parâmetro uma matriz e retorna o maior e o menor valor dessa matriz.
-'''
+
+"""maior_menor_matriz: recebe por parâmetro uma matriz e retorna o maior e o menor valor dessa matriz.
+"""
+
 
 def maior_menor_matriz(matriz):
     menor = 999
     maior = 0
-    
+
     for i in range(len(matriz)):
         for j in range(len(matriz[i])):
             if matriz[i][j] < menor:

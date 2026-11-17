@@ -1,0 +1,5 @@
+2026-10-24 14:40:05 [INFO] Usuario jonh.armless fez login com sucesso.
+2026-10-24 14:41:10 [WARN] Tentativa de conexão lenta ao banco de dados (tempo: 1200ms).
+2026-10-24 14:42:00 [ERROR] NullPointerException na classe CheckoutService.java:45.
+2026-10-24 14:43:00 [INFO] Usuario chuck.norris fez login com sucesso.
+2026-10-24 14:40:05 [INFO] Usuario jonh.armless fez logoff com sucesso.

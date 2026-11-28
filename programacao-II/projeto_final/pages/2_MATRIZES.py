@@ -16,8 +16,11 @@ if st.button("Enviar"):
     soma, media = somaMediaMatriz(matriz)
 
     st.subheader("Matriz gerada")
-    for i in range(len(matriz)):
-        st.write("Linha", i + 1, ":", matriz[i])
+    for linha in matriz:
+        textoLinha = ""
+        for valor in linha:
+            textoLinha += str(valor) + " "
+        st.write(textoLinha)
 
     st.write("Somatório:", soma)
     st.write("Média geral:", media)

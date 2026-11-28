@@ -1,17 +1,13 @@
 from random import randint
 from datetime import datetime
-import locale
 
-locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")
-
-"""grava_log: função que deve receber por parâmetro uma mensagem e gravar no arquivo
-“prog.log” no formato “ timestamp | mesagem“."""
+"""grava_log: recebe uma mensagem e grava no arquivo prog.log."""
 
 
 def grava_log(mensagem):
     timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     arquivo = open("prog.log", "a")
-    arquivo.write(timestamp + " | " + mensagem + "\n")
+    arquivo.write(timestamp + " - " + mensagem + "\n")
     arquivo.close()
 
 
@@ -51,19 +47,19 @@ def conta_vogais_consoantes(frase):
     vogais = 0
     consoantes = 0
     numerais = 0
-    caracteresesEspeciais = 0
+    caracteresEspeciais = 0
 
     for caractere in frase.lower():
-        if caractere in "aeiou":
+        if caractere in "aeiouáàâãéêíóôõúü":
             vogais += 1
-        elif caractere in "bcdfghjklmnpqrstvwxyz":
+        elif caractere in "bcdfghjklmnpqrstvwxyzç":
             consoantes += 1
         elif caractere in "0123456789":
             numerais += 1
         else:
-            caracteresesEspeciais += 1
+            caracteresEspeciais += 1
 
-    return vogais, consoantes, numerais, caracteresesEspeciais
+    return vogais, consoantes, numerais, caracteresEspeciais
 
 
 """gera_array: deve receber por parâmetro três valores: tamanho, valor inicial e final, e retornar
@@ -96,12 +92,16 @@ de todos os elementos da matriz passada por parâmetro."""
 def soma_media_matriz(matriz):
     soma = 0
     qtdElementos = 0
+    media = 0
+
     for i in matriz:
         for j in i:
             soma += j
             qtdElementos += 1
 
-    media = soma / qtdElementos
+    if qtdElementos > 0:
+        media = soma / qtdElementos
+
     return soma, media
 
 
@@ -111,13 +111,26 @@ formato string, converter a data para o formato datetime e retornar a idade em a
 
 
 def calcula_idade(dataNasc):
-    dataNasc = datetime.strptime(dataNasc, "%d/%m/%Y")
-    agora = datetime.now()
+    try:
+        nascimento = datetime.strptime(dataNasc, "%d/%m/%Y").date()
 
-    anos = agora.year - dataNasc.year
-    meses = agora.month - dataNasc.month
+    except:
+        return "Data inválida. Use o formato dd/mm/aaaa."
 
-    return f"{anos} anos e {meses} meses"
+    else:
+        hoje = datetime.now().date()
 
+        if nascimento > hoje:
+            return "A data não pode estar no futuro."
 
-print(calcula_idade("03/02/2006"))
+        anos = hoje.year - nascimento.year
+        meses = hoje.month - nascimento.month
+
+        if hoje.day < nascimento.day:
+            meses -= 1
+
+        if meses < 0:
+            anos -= 1
+            meses += 12
+
+        return f"{anos} anos e {meses} meses"

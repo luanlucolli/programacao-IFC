@@ -1,3 +1,7 @@
+import os
+from datetime import datetime
+import streamlit as st
+
 from funcoes import grava_log as gravaLog
 from funcoes import busca_termo as buscaTermo
 from funcoes import conta_termo as contaTermo
@@ -7,6 +11,22 @@ from funcoes import gera_matrix as geraMatrix
 from funcoes import soma_media_matriz as somaMediaMatriz
 from funcoes import calcula_idade as calculaIdade
 
-import streamlit as st
-
 st.title("Projeto Final")
+
+st.header("Luan Gustavo Luçolli")
+
+st.image("luan_gustavo_lucolli.png", caption="Luan Gustavo Luçolli")
+
+st.subheader("Informações do projeto")
+st.write("**Nome:** Luan Gustavo Luçolli")
+st.write("**Semestre:** 2º semestre")
+st.write("**Curso:** Redes de Computadores")
+st.write("**Disciplina:** Programação II")
+
+linkCurriculo = "https://www.linkedin.com/in/luan-gustavo-lucolli/"
+st.markdown("[Abrir currículo](" + linkCurriculo + ")")
+
+st.subheader("Acesso ao sistema")
+agora = datetime.now()
+st.write("Data e hora:", agora.strftime("%d/%m/%Y %H:%M:%S"))
+st.write("Tipo de sistema:", os.name)

@@ -1,0 +1,23 @@
+import streamlit as st
+
+from funcoes import grava_log as gravaLog
+from funcoes import gera_matrix as geraMatrix
+from funcoes import soma_media_matriz as somaMediaMatriz
+
+st.title("MATRIZES")
+st.write("Informe o tamanho da matriz que será gerada.")
+
+linhas = st.number_input("Número de linhas", min_value=1, max_value=100, value=3, step=1)
+colunas = st.number_input("Número de colunas", min_value=1, max_value=100, value=3, step=1)
+
+if st.button("Enviar"):
+    gravaLog("MATRIZES")
+    matriz = geraMatrix(int(linhas), int(colunas))
+    soma, media = somaMediaMatriz(matriz)
+
+    st.subheader("Matriz gerada")
+    for i in range(len(matriz)):
+        st.write("Linha", i + 1, ":", matriz[i])
+
+    st.write("Somatório:", soma)
+    st.write("Média geral:", media)

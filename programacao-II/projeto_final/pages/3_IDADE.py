@@ -18,7 +18,7 @@ if st.button("Enviar"):
     gravaLog("IDADE")
 
     if nome == "":
-        st.error("Informe seu nome.")
+        st.write("Informe seu nome.")
     else:
         nascimento = datetime.strptime(
             "01/01/" + str(int(anoNascimento)), "%d/%m/%Y"
@@ -32,7 +32,7 @@ if st.button("Enviar"):
         dias = diferenca.days
         horas = diferenca.days * 24 + agora.hour
 
-        st.subheader("Resultado")
+        st.write("Resultado")
         st.write(nome + ", você está vivo há " + idade + ".")
         st.write("Isso corresponde a:")
         st.write("a) " + str(meses) + " meses")

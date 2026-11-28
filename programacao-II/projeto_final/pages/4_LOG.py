@@ -16,7 +16,7 @@ termo = st.text_input("Palavra para pesquisar")
 
 if st.button("Pesquisas"):
     if termo == "":
-        st.error("Digite uma palavra para pesquisar.")
+        st.write("Digite uma palavra para pesquisar.")
     elif len(linhas) == 0:
         st.write("Ainda não existem registros no arquivo de log.")
     else:
@@ -25,7 +25,7 @@ if st.button("Pesquisas"):
         arquivo.close()
         quantidade = contaTermo(linhas, termo)
 
-        st.subheader("Resultado da busca")
+        st.write("Resultado da busca")
         st.write("Linhas encontradas: " + str(quantidade))
         if quantidade == 0:
             st.write("Nenhuma linha contém essa palavra.")
@@ -33,7 +33,7 @@ if st.button("Pesquisas"):
             for linha in linhasEncontradas:
                 st.write(linha)
 
-st.subheader("Todos os registros")
+st.write("Todos os registros")
 if len(linhas) == 0:
     st.write("O arquivo prog.log ainda não foi criado ou está vazio.")
 else:

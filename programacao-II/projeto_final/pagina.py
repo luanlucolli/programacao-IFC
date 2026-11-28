@@ -13,20 +13,20 @@ from funcoes import calcula_idade as calculaIdade
 
 st.title("Projeto Final")
 
-st.header("Luan Gustavo Luçolli")
+st.write("Luan Gustavo Luçolli")
 
-st.image("luan_gustavo_lucolli.png", caption="Luan Gustavo Luçolli")
+st.image("luan_gustavo_lucolli.png")
 
-st.subheader("Informações do projeto")
-st.write("**Nome:** Luan Gustavo Luçolli")
-st.write("**Semestre:** 2º semestre")
-st.write("**Curso:** Redes de Computadores")
-st.write("**Disciplina:** Programação II")
+st.write("Informações do projeto")
+st.write("Nome: Luan Gustavo Luçolli")
+st.write("Semestre: 2º semestre")
+st.write("Curso: Redes de Computadores")
+st.write("Disciplina: Programação II")
 
 linkCurriculo = "https://www.linkedin.com/in/luan-gustavo-lucolli/"
-st.markdown("[Abrir currículo](" + linkCurriculo + ")")
+st.write("[Abrir currículo](" + linkCurriculo + ")")
 
-st.subheader("Acesso ao sistema")
+st.write("Acesso ao sistema")
 agora = datetime.now()
-st.write("Data e hora:", agora.strftime("%d/%m/%Y %H:%M:%S"))
-st.write("Tipo de sistema:", os.name)
+st.write("Data e hora: " + agora.strftime("%d/%m/%Y %H:%M:%S"))
+st.write("Tipo de sistema: " + os.name)

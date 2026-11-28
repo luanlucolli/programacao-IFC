@@ -12,17 +12,17 @@ if st.button("Enviar"):
     gravaLog("TEXTOS")
 
     if caminho == "":
-        st.error("Informe o caminho de um arquivo.")
+        st.write("Informe o caminho de um arquivo.")
     else:
         try:
             arquivo = open(caminho, "r")
             texto = arquivo.read()
             arquivo.close()
         except:
-            st.error("Não foi possível abrir esse arquivo. Confira o caminho informado.")
+            st.write("Não foi possível abrir esse arquivo. Confira o caminho informado.")
         else:
             vogais, consoantes, numerais, especiais = contaVogaisConsoantes(texto)
-            st.subheader("Resultado")
+            st.write("Resultado")
             st.write("Vogais: " + str(vogais))
             st.write("Consoantes: " + str(consoantes))
             st.write("Numerais: " + str(numerais))

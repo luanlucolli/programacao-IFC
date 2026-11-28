@@ -15,7 +15,7 @@ if st.button("Enviar"):
     matriz = geraMatrix(int(linhas), int(colunas))
     soma, media = somaMediaMatriz(matriz)
 
-    st.subheader("Matriz gerada")
+    st.write("Matriz gerada")
     for linha in matriz:
         textoLinha = ""
         for valor in linha:

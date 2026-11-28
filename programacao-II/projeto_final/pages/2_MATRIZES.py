@@ -22,5 +22,5 @@ if st.button("Enviar"):
             textoLinha += str(valor) + " "
         st.write(textoLinha)
 
-    st.write("Somatório:", soma)
-    st.write("Média geral:", media)
+    st.write("Somatório: " + str(soma))
+    st.write("Média geral: " + str(media))

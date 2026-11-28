@@ -23,7 +23,7 @@ if st.button("Enviar"):
         else:
             vogais, consoantes, numerais, especiais = contaVogaisConsoantes(texto)
             st.subheader("Resultado")
-            st.write("Vogais:", vogais)
-            st.write("Consoantes:", consoantes)
-            st.write("Numerais:", numerais)
-            st.write("Caracteres especiais:", especiais)
+            st.write("Vogais: " + str(vogais))
+            st.write("Consoantes: " + str(consoantes))
+            st.write("Numerais: " + str(numerais))
+            st.write("Caracteres especiais: " + str(especiais))

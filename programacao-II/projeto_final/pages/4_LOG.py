@@ -26,7 +26,7 @@ if st.button("Pesquisas"):
         quantidade = contaTermo(linhas, termo)
 
         st.subheader("Resultado da busca")
-        st.write("Linhas encontradas:", quantidade)
+        st.write("Linhas encontradas: " + str(quantidade))
         if quantidade == 0:
             st.write("Nenhuma linha contém essa palavra.")
         else:

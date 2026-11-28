@@ -14,7 +14,7 @@ except:
 
 termo = st.text_input("Palavra para pesquisar")
 
-if st.button("Pesquisar"):
+if st.button("Pesquisas"):
     if termo == "":
         st.error("Digite uma palavra para pesquisar.")
     elif len(linhas) == 0:
